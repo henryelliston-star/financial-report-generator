@@ -1,0 +1,30 @@
+{
+  "name": "financial-report-generator",
+  "version": "1.0.0",
+  "description": "Automated multi-provider financial report generation system",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "build": "cd frontend && npm install && npm run build",
+    "install-backend": "cd backend && npm install",
+    "dev-frontend": "cd frontend && npm start",
+    "dev-backend": "cd backend && node server.js",
+    "postinstall": "npm run install-backend"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "financial",
+    "reports",
+    "automation",
+    "pension",
+    "investments"
+  ],
+  "author": "The Family Wealth Partnership",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR-USERNAME/financial-report-generator.git"
+  }
+}
