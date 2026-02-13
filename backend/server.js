@@ -1598,9 +1598,12 @@ if (process.env.NODE_ENV === 'production') {
   const frontendPath = path.join(__dirname, '../frontend/build');
   app.use(express.static(frontendPath));
   
-  app.get('*', (req, res) => {
+  // Fallback to index.html for client-side routing
+  app.use((req, res, next) => {
     if (!req.path.startsWith('/api')) {
       res.sendFile(path.join(frontendPath, 'index.html'));
+    } else {
+      next();
     }
   });
 }
