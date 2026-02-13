@@ -1606,11 +1606,16 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 app.listen(PORT, () => {
-  console.log(`
-🚀 COMPLETE Professional Report Server
-📍 Port: ${PORT}
-✓ ALL comprehensive sections included
-✓ Using ORIGINAL cashflow charts from template  
-✓ Tax Summary + Top 10 Holdings included
-  `);
+  capp.listen(PORT, () => {
+  console.log('\n========================================');
+  console.log('Professional Report Server');
+  console.log('========================================');
+  console.log('Port:', PORT);
+  console.log('Status: Running');
+  console.log('Features:');
+  console.log('  - Multi-provider extraction');
+  console.log('  - Comprehensive reports');
+  console.log('  - Tax Summary + Top 10 Holdings');
+  console.log('========================================\n');
 });
+
