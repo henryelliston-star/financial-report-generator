@@ -1,14 +1,14 @@
 [phases.setup]
-nixPkgs = ["python311Full"]
+nixPkgs = ["python311", "python311Packages.pip"]
 
 [phases.install]
 cmds = [
   "npm ci --omit=dev",
-  "python3.11 -m pip install python-docx matplotlib numpy",
+  "python3 -m pip install python-docx matplotlib numpy",
   "cd frontend && npm ci"
 ]
 
-[phases.build]  
+[phases.build]
 cmds = ["cd frontend && npm run build"]
 
 [start]
