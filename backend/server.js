@@ -137,7 +137,7 @@ async function extractFromPDF(pdfPath) {
     const scriptPath = path.join(__dirname, 'multi_provider_extractor.py');
     
     return new Promise((resolve) => {
-      const python = spawn('python3.11', [scriptPath]);
+      const python = spawn('python3', [scriptPath]);
       
       // Send PDF text to Python script
       python.stdin.write(text);
@@ -241,7 +241,7 @@ except Exception as e:
 `;
 
   return new Promise((resolve) => {
-    const python = spawn('python3.11', ['-c', pythonScript]);
+    const python = spawn('python3', ['-c', pythonScript]);
     
     let output = '';
     
@@ -340,7 +340,7 @@ except Exception as e:
 `;
   
   return new Promise((resolve, reject) => {
-    const python = spawn('python3.11', ['-c', pythonScript]);
+    const python = spawn('python3', ['-c', pythonScript]);
     
     let output = '';
     let error = '';
