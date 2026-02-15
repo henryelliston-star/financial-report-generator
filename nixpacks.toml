@@ -1,16 +1,15 @@
 [phases.setup]
-nixPkgs = ["nodejs", "python39", "python39Packages.pip"]
+nixPkgs = ["python311Full"]
 
 [phases.install]
 cmds = [
-  "npm install",
-  "pip install python-docx --break-system-packages",
-  "cd frontend && npm install",
-  "cd frontend && npm run build"
+  "npm ci --omit=dev",
+  "python3.11 -m pip install python-docx matplotlib numpy",
+  "cd frontend && npm ci"
 ]
 
-[phases.build]
-cmds = ["echo Build completed"]
+[phases.build]  
+cmds = ["cd frontend && npm run build"]
 
 [start]
 cmd = "node backend/server.js"
